@@ -1,25 +1,34 @@
-import { Handler, Context, Callback, APIGatewayEvent } from 'aws-lambda'
+import fetch from 'node-fetch'
+import { Context, APIGatewayEvent } from 'aws-lambda'
 
-type Response = {
-  statusCode: number
-  body: string
+type ClassList = {
+  count: number
+  results: any[]
+}
+const DND_5E_API = 'https://www.dnd5eapi.co'
+
+async function getClassData(url) {
+  const resp = await fetch(DND_5E_API + url)
+  return resp.json()
 }
 
-const handler: Handler = function (
-  event: APIGatewayEvent,
-  context: Context,
-  callback: Callback
-) {
-  const resp: Response = {
+async function getClass() {
+  const resp = await fetch(`${DND_5E_API}/api/classes/`)
+  const list: ClassList = await resp.json()
+  return list.results[Math.floor(Math.random() * list.count)]
+}
+
+export async function handler(event: APIGatewayEvent, context: Context) {
+  const randomClass = await getClass()
+  const data = await getClassData(randomClass.url)
+
+  return {
     statusCode: 200,
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({
-      message: 'it works',
-      event,
-      context,
+      data,
     }),
   }
-
-  callback(undefined, resp)
 }
-
-export { handler }
