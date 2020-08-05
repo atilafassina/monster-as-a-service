@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "npx netlify-lambda build src"
+    "build": "netlify-lambda build src"
   },
   "prettier": {
     "semi": false,

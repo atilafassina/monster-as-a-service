@@ -5,7 +5,7 @@ type Response = {
   body: string
 }
 
-const handler: Handler = async function (
+const handler: Handler = function (
   event: APIGatewayEvent,
   context: Context,
   callback: Callback
@@ -14,10 +14,12 @@ const handler: Handler = async function (
     statusCode: 200,
     body: JSON.stringify({
       message: 'it works',
+      event,
+      context,
     }),
   }
 
-  return resp
+  callback(undefined, resp)
 }
 
 export { handler }
