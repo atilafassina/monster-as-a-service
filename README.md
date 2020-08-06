@@ -3,6 +3,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/08e9878b-10bb-4706-b47a-bcc84c930c6a/deploy-status)](https://app.netlify.com/sites/friendly-curie-b02f70/deploys)
 
 This is a microservice wrapping requests to [D&D 5e API](https://www.dnd5eapi.co).
+
 It will return a random monster at every request.
 
 ## Goal
@@ -32,4 +33,5 @@ If you need help understanding the ins and outs of this code, please refer to th
 | types/aws-lambda        | Request/Response types for AWS Lambdas²       |
 
 ¹: Install it globally on your system
+
 ²: Netlify Functions uses AWS Lambdas under the hood

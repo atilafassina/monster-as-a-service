@@ -10,7 +10,7 @@ const DND_5E_API = 'https://www.dnd5eapi.co'
 
 async function getMonsterData(url) {
   try {
-    const resp = await fetch(DND_5E_API + '123123' + url)
+    const resp = await fetch(DND_5E_API + url)
     return resp.json()
   } catch {
     throw new Error('monster not found')
