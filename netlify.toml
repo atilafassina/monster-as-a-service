@@ -3,7 +3,4 @@
 # https://docs.netlify.com/configure-builds/file-based-configuration/
 [build]
   command = "yarn build"
-  functions = "lambda"
-
-[plugins]
-package = "@netlify/plugin-functions-install-core"
+  functions = "functions"
