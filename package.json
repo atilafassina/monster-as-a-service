@@ -1,14 +1,13 @@
 {
-  "name": "superhero",
+  "name": "maas",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:atilafassina/superhero.git",
+  "repository": "git@github.com:atilafassina/maas.git",
   "author": "Atila Fassina <atila@fassina.eu>",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "netlify-lambda build src",
-    "dev": "netlify dev"
+    "build": "netlify-lambda build src"
   },
   "prettier": {
     "semi": false,

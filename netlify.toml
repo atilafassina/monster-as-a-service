@@ -5,5 +5,7 @@
   command = "yarn build"
   functions = "lambda"
 
-[[plugins]]
-  package = "@netlify/plugin-functions-core"
+[[redirects]]
+  from = "/"
+  to = "/.netlify/functions/index"
+  status = 200

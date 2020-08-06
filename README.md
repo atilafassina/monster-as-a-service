@@ -1,4 +1,4 @@
-# Monster As A Service (MAAS)
+# 🧟 Monster As A Service (MAAS)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/08e9878b-10bb-4706-b47a-bcc84c930c6a/deploy-status)](https://app.netlify.com/sites/friendly-curie-b02f70/deploys)
 
@@ -31,7 +31,10 @@ If you need help understanding the ins and outs of this code, please refer to th
 | babel/preset-env        | Tells Babel which JavaScript sytnax to output |
 | babel/preset-typescript | Teach Babel to use TypeScript compiler        |
 | types/aws-lambda        | Request/Response types for AWS Lambdas²       |
+| encoding                | depency of `node-fetch`³                      |
 
 ¹: Install it globally on your system
 
 ²: Netlify Functions uses AWS Lambdas under the hood
+
+³: It should be a dependency of `node-fetch` but it’s not added in v2, so we add manually so our build doesn‘t break.
