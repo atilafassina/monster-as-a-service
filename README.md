@@ -10,7 +10,7 @@ It will return a random monster at every request.
 
 This repository is an example use-case on how to use Netlify Functions with TypeScript.
 
-[Watch the video on Youtube]()
+[Watch the video on Youtube](https://youtu.be/3-Ie6p5ySKQ)
 
 ## Deploy your own instance
 

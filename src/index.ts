@@ -1,24 +1,20 @@
 import fetch from 'node-fetch'
-import { Context, APIGatewayEvent } from 'aws-lambda'
+
+type Monster = {
+  index: string
+  name: string
+  url: string
+}
 
 type MonsterList = {
-  status?: number
   count?: number
-  results?: any[]
+  results?: Monster[]
 }
+
 const DND_5E_API = 'https://www.dnd5eapi.co'
 
-async function getMonsterData(url) {
-  try {
-    const resp = await fetch(DND_5E_API + url)
-    return resp.json()
-  } catch {
-    throw new Error('monster not found')
-  }
-}
-
 async function getMonster() {
-  const resp = await fetch(`${DND_5E_API}/api/monsters/`)
+  const resp = await fetch(`${DND_5E_API}/api/monsters`)
   const list: MonsterList = await resp.json()
 
   if (!list.count) {
@@ -28,7 +24,16 @@ async function getMonster() {
   return list.results[Math.floor(Math.random() * list.count)]
 }
 
-export async function handler(event: APIGatewayEvent, context: Context) {
+async function getMonsterData(url: string) {
+  try {
+    const resp = await fetch(DND_5E_API + url)
+    return resp.json()
+  } catch {
+    throw new Error('monster not found')
+  }
+}
+
+export async function handler() {
   try {
     const randomMonster = await getMonster()
     const data = await getMonsterData(randomMonster.url)
@@ -44,7 +49,7 @@ export async function handler(event: APIGatewayEvent, context: Context) {
     return {
       statusCode: 500,
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application.json',
       },
       body: JSON.stringify({
         message: err.message,
