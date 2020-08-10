@@ -28,13 +28,13 @@ If you need help understanding the ins and outs of this code, please refer to th
 | Netlify Lambda          | Adds build-step to Netlify Functions          |
 | TypeScript              | The compiler for TypeScript (`tsc`)           |
 | node-fetch              | Brings `window.fetch` api to NodeJS           |
-| babel/preset-env        | Tells Babel which JavaScript sytnax to output |
+| babel/preset-env        | Tells Babel which JavaScript syntax to output |
 | babel/preset-typescript | Teach Babel to use TypeScript compiler        |
 | types/aws-lambda        | Request/Response types for AWS Lambdas²       |
 | encoding                | depency of `node-fetch`³                      |
 
-¹: Install it globally on your system
+**1:** Install it globally on your system
 
-²: Netlify Functions uses AWS Lambdas under the hood
+**2:** Netlify Functions uses AWS Lambdas under the hood
 
-³: It should be a dependency of `node-fetch` but it’s not added in v2, so we add manually so our build doesn‘t break.
+**3:** It should be a dependency of `node-fetch` but it’s not added in v2, so we add manually so our build doesn‘t break.
