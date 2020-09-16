@@ -16,13 +16,13 @@
   },
   "dependencies": {
     "encoding": "^0.1.13",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
-    "netlify-lambda": "^2.0.1",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-typescript": "^7.10.4",
     "@types/aws-lambda": "^8.10.59",
+    "netlify-lambda": "^2.0.1",
     "prettier": "^2.0.5",
     "typescript": "^3.9.7"
   }
